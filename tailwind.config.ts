@@ -8,9 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        rajdhani: ["var(--font-rajdhani)"],
+        rubik: ["var(--font-rubik)"],
       },
     },
   },
