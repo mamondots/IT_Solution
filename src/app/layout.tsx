@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Rajdhani, Rubik } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/Components/Sharable/Navbar/Navbar";
 
 const rajdhani = Rajdhani({
   subsets: ["latin"],
   variable: "--font-rajdhani",
-  weight: "500",
+  weight: "700",
 });
 
 const rubik = Rubik({
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rajdhani.variable} ${rubik.variable} antialiased`}>
+        <Navbar></Navbar>
         {children}
       </body>
     </html>
