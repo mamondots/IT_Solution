@@ -72,7 +72,7 @@ const About = () => {
           <p className="text-lg uppercase font-rajdhani tracking-widest text-[#B91202] py-2">
             About us
           </p>
-          <h2 className="text-5xl font-rajdhani leading-tight">
+          <h2 className="lg:text-5xl md:text-5xl text-3xl font-rajdhani leading-tight">
             Empowering Your Digital Tomorrow
           </h2>
           <p className="py-3 text-[#fff]/60 leading-loose">

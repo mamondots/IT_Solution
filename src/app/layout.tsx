@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rajdhani, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Sharable/Navbar/Navbar";
+import Footer from "@/Components/Sharable/Footer/Footer";
 
 const rajdhani = Rajdhani({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${rajdhani.variable} ${rubik.variable} antialiased`}>
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );
