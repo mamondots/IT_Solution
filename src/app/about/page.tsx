@@ -1,3 +1,5 @@
+import AboutBox from "@/Components/AboutPages/AboutBox/AboutBox";
+import Loges from "@/Components/AboutPages/Loges/Loges";
 import About from "@/Components/HomePages/About/About";
 import CountPeople from "@/Components/HomePages/CountPeople/CountPeople";
 import Subscribe from "@/Components/HomePages/Subscribe/Subscribe";
@@ -14,6 +16,10 @@ const page = () => {
         <Subscribe></Subscribe>
         <Testimonal></Testimonal>
         <CountPeople></CountPeople>
+        <div>
+          <Loges></Loges>
+          <AboutBox></AboutBox>
+        </div>
       </div>
     </div>
   );
