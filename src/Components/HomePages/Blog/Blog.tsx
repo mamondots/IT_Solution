@@ -7,6 +7,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaComments, FaArrowRight } from "react-icons/fa6";
 
 import "./Blog.css";
+import Link from "next/link";
 
 const Blog = () => {
   // Animation variants
@@ -70,12 +71,14 @@ const Blog = () => {
                 <h2 className="text-3xl font-rajdhani py-3 hover:text-[#B91202] cursor-pointer duration-300">
                   {item.title}
                 </h2>
-                <button className="flex items-center gap-3 tracking-widest hover:text-[#B91202] duration-300 cursor-pointer font-rajdhani">
-                  <span>READ MORE</span>
-                  <span className="text-[#B91202]">
-                    <FaArrowRight />
-                  </span>
-                </button>
+                <Link href="/blogdetails">
+                  <button className="flex items-center gap-3 tracking-widest hover:text-[#B91202] duration-300 cursor-pointer font-rajdhani">
+                    <span>READ MORE</span>
+                    <span className="text-[#B91202]">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

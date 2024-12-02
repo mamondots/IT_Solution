@@ -18,7 +18,7 @@ export const navItems = [
   },
   {
     label: "Blog",
-    href: "/",
+    href: "/blog",
   },
   {
     label: "Team",
