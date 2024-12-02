@@ -26,7 +26,7 @@ const ServiceBox = () => {
             </p>
 
             <div className="mt-4">
-              <Link href="/servicedetails">
+              <Link href="/projectdetails">
                 <button className="bg-[#141416] px-6 py-3 rounded-md border border-transparent group-hover:border-[#B91202] duration-300 capitalize text-base font-rajdhani tracking-widest flex items-center gap-2">
                   <span className="capitalize">READ MORE</span>
                   <span className="text-[#B91202] text-2xl">+</span>

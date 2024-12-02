@@ -4,6 +4,7 @@ import { portfolioItems } from "../../../../public/PortfolioItems";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const Portfolio = () => {
   const controls = useAnimation();
@@ -45,7 +46,7 @@ const Portfolio = () => {
       </div>
 
       <div className="lg:grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-12 hidden">
-        {portfolioItems.map((item, index) => (
+        {portfolioItems.slice(0, 4).map((item, index) => (
           <motion.div
             ref={ref}
             initial="hidden"
@@ -67,7 +68,8 @@ const Portfolio = () => {
               ></Image>
             </div>
 
-            <div
+            <Link
+              href="/servicedetails"
               className="w-full h-full absolute top-0 left-0 rounded-md inset-0 
               opacity-0 group-hover:opacity-100 transform 
               group-hover:scale-95 duration-300"
@@ -85,14 +87,15 @@ const Portfolio = () => {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </Link>
           </motion.div>
         ))}
       </div>
 
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-12 lg:hidden">
-        {portfolioItems.map((item, index) => (
-          <div
+        {portfolioItems.slice(0.4).map((item, index) => (
+          <Link
+            href="/servicedetails"
             key={item.id}
             className={`relative cursor-pointer group ${
               index % 2 === 0 ? "mt-4" : "mb-4"
@@ -127,7 +130,7 @@ const Portfolio = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

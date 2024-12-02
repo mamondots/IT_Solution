@@ -14,7 +14,7 @@ export const navItems = [
   },
   {
     label: "Project",
-    href: "/",
+    href: "/projects",
   },
   {
     label: "Blog",
