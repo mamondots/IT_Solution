@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import Head from "@/assets/images/all_head.webp";
 import Link from "next/link";
-const AllHead = () => {
+const AllHead = ({ head, subHead }: any) => {
   return (
     <div
       className="top-0 left-0 absolute w-full lg:px-20 md:px-16 px-10 py-12"
@@ -19,7 +20,7 @@ const AllHead = () => {
         }}
       ></div>
       <div className="text-[#fff] relative z-10 py-20">
-        <h2 className="text-2xl font-rajdhani capitalize">About us</h2>
+        <h2 className="text-2xl font-rajdhani capitalize">{head}</h2>
         <div className="flex items-center gap-4 mt-4 font-rajdhani">
           <Link href="/">
             <p className="tracking-widest cursor-pointer hover:text-[#AE1A00]">
@@ -28,7 +29,7 @@ const AllHead = () => {
           </Link>
 
           <p>/</p>
-          <p className="tracking-widest">About</p>
+          <p className="tracking-widest capitalize">{subHead}</p>
         </div>
       </div>
     </div>

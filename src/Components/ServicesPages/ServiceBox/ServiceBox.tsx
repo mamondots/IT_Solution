@@ -1,12 +1,11 @@
 import React from "react";
 import { serviceItens } from "../../../../public/ServiceItems";
 import Link from "next/link";
-
-const Services = () => {
+const ServiceBox = () => {
   return (
-    <div className="bg-[#0B0B0B] text-white relative z-50 py-24 lg:px-16 md:px-16 px-10">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-4">
-        {serviceItens.slice(0, 3).map((item) => (
+    <div className="lg:px-20 px-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:gap-6 gap-4 text-[#fff]">
+        {serviceItens.map((item) => (
           <div
             key={item.id}
             className="group relative bg-[#1A1A1C] p-8 rounded-xl cursor-pointer border-b-2 border-transparent hover:translate-y-[-12px] duration-300"
@@ -42,4 +41,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServiceBox;

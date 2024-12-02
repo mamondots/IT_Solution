@@ -10,7 +10,7 @@ export const navItems = [
 
   {
     label: "Services",
-    href: "/",
+    href: "/service",
   },
   {
     label: "Project",

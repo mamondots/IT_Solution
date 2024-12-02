@@ -10,7 +10,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <AllHead></AllHead>
+      <AllHead head="About us" subHead="about"></AllHead>
       <div className="py-20 mt-40 bg-[#151515]">
         <About></About>
         <Subscribe></Subscribe>
