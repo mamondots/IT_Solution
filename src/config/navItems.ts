@@ -22,10 +22,10 @@ export const navItems = [
   },
   {
     label: "Team",
-    href: "/",
+    href: "/team",
   },
   {
     label: "Contact",
-    href: "/",
+    href: "/contact",
   },
 ];

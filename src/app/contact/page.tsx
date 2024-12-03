@@ -1,13 +1,13 @@
-import SingleService from "@/Components/ServicesPages/SingleService/SingleService";
+import ContentInfo from "@/Components/ContactPages/ContentInfo/ContentInfo";
 import AllHead from "@/Utilits/AllHead";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <AllHead head="Project Details" subHead="Project Details"></AllHead>
+      <AllHead head="Contact Us" subHead="Contact Us"></AllHead>
       <div className="py-20 mt-64 bg-[#151515] text-[#fff] lg:px-20 px-10">
-        <SingleService></SingleService>
+        <ContentInfo></ContentInfo>
       </div>
     </div>
   );

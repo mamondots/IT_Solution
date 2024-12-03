@@ -25,7 +25,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative mt-[-130px]">
+    <div className="relative mt-[-80px]">
       <Swiper
         loop={true}
         effect={"fade"}
@@ -46,7 +46,7 @@ const Banner = () => {
         {bannerItems.map((item, index) => (
           <SwiperSlide key={item.id}>
             <div
-              className="relative lg:py-60 md:py-60 py-40"
+              className="relative lg:py-80 md:py-80 py-60"
               style={{
                 backgroundImage: `url(${item.image})`,
                 backgroundSize: "cover",
@@ -95,7 +95,7 @@ const Banner = () => {
             </div>
           </SwiperSlide>
         ))}
-        <div className="relative top-[-62vh] hidden lg:block cursor-pointer">
+        <div className="relative top-[-80vh] hidden lg:block cursor-pointer">
           <div className="custom-prev absolute top-[-40px] left-20 z-50 w-[40px] h-[40px] border border-[#AE1A00] hover:bg-[#AE1A00] hover:text-[#fff] duration-300 rounded-full flex items-center justify-center">
             <p className="text-[#fff]">
               <FaLongArrowAltLeft />
@@ -107,7 +107,6 @@ const Banner = () => {
             </p>
           </div>
         </div>
-        {/* <div className="custom-pagination lg:hidden relative top-[-20vh] z-50"></div> */}
       </Swiper>
     </div>
   );

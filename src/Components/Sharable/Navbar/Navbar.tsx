@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navItems } from "@/config/navItems";
 import Link from "next/link";
 import { IoMdArrowForward } from "react-icons/io";
@@ -7,24 +7,45 @@ import { IoMdMenu } from "react-icons/io";
 import { FaXmark } from "react-icons/fa6";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa6";
-
 import { FaTwitter } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpne, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   const handleOpen = () => {
     setIsOpen(!isOpne);
   };
 
+  // Detect scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <div className="lg:px-20 md:px-16 px-10 py-10 relative z-[999]">
+      <div
+        className={`lg:px-20 md:px-16 px-10 py-6 fixed top-0 w-full z-[999] transition-all duration-300 ${
+          scrolled
+            ? "bg-[#141416] shadow-lg border-b border-[#fff]/20"
+            : "bg-transparent"
+        }`}
+      >
         <div className="flex items-center justify-between text-[#fff]">
           <div>
-            <h2 className="text-2xl font-rajdhani font-extrabold">
-              <span>Al</span> <span className="text-[#B91202]">Mamon</span>
-            </h2>
+            <Link href="/">
+              <h2 className="text-2xl font-rajdhani font-extrabold">
+                <span>Al</span> <span className="text-[#B91202]">Mamon</span>
+              </h2>
+            </Link>
           </div>
           <div className="lg:flex hidden items-center gap-6 list-none font-rubik">
             {navItems.map((item) => (
@@ -55,26 +76,32 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       <div>
         {isOpne && (
           <div className="top-0 left-0 w-full h-full fixed bg-[#141416]/60 z-[999]">
-            <div className="lg:w-2/3 md:w-2/3  h-screen bg-[#fff] px-12 py-8">
+            <div className="lg:w-2/3 md:w-2/3 h-screen bg-[#fff] px-12 py-8">
               <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-rajdhani">
-                  Al <span className="text-[#E1291A]">Mamon</span>
-                </h2>
+                <Link href="/">
+                  <h2 className="text-3xl font-rajdhani font-extrabold">
+                    <span>Al</span>
+                    <span className="text-[#B91202]">Mamon</span>
+                  </h2>
+                </Link>
                 <p onClick={handleOpen} className="text-2xl cursor-pointer">
                   <FaXmark />
                 </p>
               </div>
 
-              <div className="flex flex-col gap-4 font-rajdhani list-none  mt-12">
+              <div className="flex flex-col gap-4 font-rajdhani list-none mt-12">
                 {navItems.map((item) => (
                   <li
+                    onClick={handleOpen}
                     key={item.label}
                     className="tracking-widest border-b border-[#262626]/30 pb-2"
                   >
-                    <Link href="/">{item.label}</Link>
+                    <Link href={item.href}>{item.label}</Link>
                   </li>
                 ))}
               </div>

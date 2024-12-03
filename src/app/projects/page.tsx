@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div>
       <AllHead head="Project" subHead="Project"></AllHead>
-      <div className="py-20 mt-32 bg-[#151515] text-[#fff] lg:px-16 px-10">
+      <div className="py-20 mt-64 bg-[#151515] text-[#fff] lg:px-16 px-10">
         <ProjectCard></ProjectCard>
       </div>
     </div>
