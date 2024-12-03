@@ -30,7 +30,7 @@ const CountPeople = () => {
               <span>
                 <CountUp
                   start={0}
-                  end={hasAnimated ? count.counte : 0}
+                  end={hasAnimated ? Number(count.counte) : 0}
                   duration={2.5}
                 />
               </span>

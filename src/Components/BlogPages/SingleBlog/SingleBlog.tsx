@@ -191,8 +191,8 @@ const SingleBlog = () => {
                     className="w-full border border-[#fff]/10 bg-transparent outline-none rounded px-4 py-4"
                     name=""
                     id=""
-                    cols="4"
-                    rows="6"
+                    cols={4}
+                    rows={6}
                     placeholder="Write Message.."
                   ></textarea>
                 </div>

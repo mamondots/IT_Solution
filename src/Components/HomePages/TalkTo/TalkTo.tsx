@@ -58,8 +58,8 @@ const TalkTo = () => {
                   className="w-full bg-transparent outline-none"
                   name=""
                   id=""
-                  cols="8"
-                  rows="4"
+                  cols={8}
+                  rows={4}
                   placeholder="message"
                 ></textarea>
                 <span></span>
