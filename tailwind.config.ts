@@ -36,7 +36,7 @@ export default {
 
       addUtilities(newUtilities, {
         respectPrefix: true,
-        respectImportant: true, // Optional, enables !important where needed
+        respectImportant: true,
       });
     },
   ],
