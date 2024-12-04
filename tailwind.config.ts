@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 export default {
   content: [
@@ -7,6 +7,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     extend: {
       fontFamily: {
@@ -15,8 +16,9 @@ export default {
       },
     },
   },
+
   plugins: [
-    function ({ addUtilities }: any) {
+    function ({ addUtilities }: PluginAPI) {
       const newUtilities = {
         ".text-stroke-1": {
           "-webkit-text-stroke-width": "1px",
@@ -32,7 +34,10 @@ export default {
         },
       };
 
-      addUtilities(newUtilities, ["responsive", "hover"]);
+      addUtilities(newUtilities, {
+        respectPrefix: true,
+        respectImportant: true, // Optional, enables !important where needed
+      });
     },
   ],
 } satisfies Config;
